@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'content' => fake()->text(500),
+            'post_id'   => mt_rand(1, Post::all()->count()),
         ];
     }
 }
