@@ -20,7 +20,7 @@ class PostTagSeeder extends Seeder
         for ($i = 1; $i = 20; $i++) {
             DB::table('post_tag')->insert([
                 'post_id' => mt_rand(1, Post::all()->count()),
-                'tag_id' => mt_rand(5),
+                'tag_id' => mt_rand(1,5),
             ]);
         }
     }
