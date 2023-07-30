@@ -20,7 +20,13 @@ use App\Models\Post;
 
 Route::get('/', function () {
 
-  dump(User::select('id' , 'name')->withCount('posts')
-    ->orderByDesc('posts_count')
-    ->get());
+    // $post_id = 4;
+    $category_id = 4;
+
+    // return(Tag::with(['posts' => function ($query) {
+    //     $query->select('posts.id', 'posts.title');
+    // }])->findOrFail($post_id));
+    // return (Category::with(['posts' => function ($query) {
+    //     $query->select('posts.id', 'posts.title', 'posts.category_id');
+    // }])->findOrFail($category_id));
 });
