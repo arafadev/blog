@@ -20,13 +20,10 @@ use App\Models\Post;
 
 Route::get('/', function () {
 
-    // $post_id = 4;
-    $category_id = 4;
-
-    // return(Tag::with(['posts' => function ($query) {
-    //     $query->select('posts.id', 'posts.title');
-    // }])->findOrFail($post_id));
-    // return (Category::with(['posts' => function ($query) {
-    //     $query->select('posts.id', 'posts.title', 'posts.category_id');
-    // }])->findOrFail($category_id));
+    // $post_title = 'Laudantium';
+    // $post_content = 'rum err';
+    // return Post::where(function ($query) use ($post_title, $post_content) {
+    //     $query->where('title', 'LIKE', "%$post_title%")
+    //         ->where('content', 'LIKE', "%$post_content%");
+    // })->get();
 });
