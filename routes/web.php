@@ -20,10 +20,16 @@ use App\Models\Post;
 
 Route::get('/', function () {
 
-    // $post_title = 'Laudantium';
-    // $post_content = 'rum err';
-    // return Post::where(function ($query) use ($post_title, $post_content) {
-    //     $query->where('title', 'LIKE', "%$post_title%")
-    //         ->where('content', 'LIKE', "%$post_content%");
-    // })->get();
+    // create posts
+    $user_id = 1;
+    $category_id = 3;
+
+    $post = new Post();
+
+    $post->title = 'post title';
+    $post->content = 'post content';
+    $post->category()->associate($category_id);
+    $result = User::find($user_id)->posts()->save($post);
+
+    return $result;
 });
